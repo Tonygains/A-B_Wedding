@@ -36,4 +36,153 @@
     .section {
       max-width: 720px;
       margin: 50px auto;
+      padding: 45px;
+      background: #ffffff;
+      border-radius: 22px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    }
+
+    button {
+      background: #6f8f7a;
+      color: white;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 30px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background: #587563;
+      transform: scale(1.05);
+    }
+
+    img.loutres-principale {
+      width: 320px;
+      border-radius: 20px;
+      margin-top: 25px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    #resultat {
+      margin-top: 20px;
+      font-size: 1.3em;
+      color: #587563;
+      font-weight: 500;
+    }
+
+    /* 🦦 LOUTRES SURPRISE */
+    .otter {
+      position: fixed;
+      width: 120px;
+      z-index: 999;
+      animation: fadeInOut 6s ease-in-out forwards;
+      pointer-events: none;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: scale(0.8); }
+      15% { opacity: 1; transform: scale(1); }
+      85% { opacity: 1; }
+      100% { opacity: 0; transform: scale(0.8); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Anaïs & Baptiste</h1>
+  <p>Se disent oui, et aimeraient beaucoup que vous soyez là 🤍</p>
+
+  <div class="section">
+    <h2>📅 Quand</h2>
+    <p>
+      Samedi 20 juin 2026<br>
+      (prévoir des mouchoirs… et de la bonne humeur)
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>📍 Où</h2>
+    <p>
+      Château de la Joie<br>
+      Un lieu champêtre, bohème, et plein de culs 🌿
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>🦦 Mascottes officielles</h2>
+    <p>
+      Les loutres.<br>
+      Parce qu’elles se tiennent la patte pour ne jamais se perdre.<br>
+      Nous aussi. Mais en plus bien habillés.
+    </p>
+
+    <img class="loutres-principale"
+         src="https://i.pinimg.com/564x/2e/5f/d5/2e5fd5f926c207b030e310b0264a3923.jpg"
+         alt="Loutres amoureuses">
+  </div>
+
+  <div class="section">
+    <h2>🎮 Jeu hautement scientifique</h2>
+    <p>Qui va pleurer en premier ?</p>
+    <button onclick="jouer()">Révélation imminente</button>
+    <div id="resultat"></div>
+  </div>
+
+  <div class="section">
+    <h2>🎈 RSVP</h2>
+    <p>
+      Merci de confirmer votre présence.<br>
+      Les loutres comptent sur vous.
+    </p>
+    <button onclick="alert('Merci 🤍 On a tellement hâte de vous voir !')">
+      Je confirme
+    </button>
+  </div>
+
+  <script>
+    /* 🎮 Jeu */
+    function jouer() {
+      const messages = [
+        "Anaïs. Immédiatement.",
+        "Baptiste. Il dira que c’est une poussière.",
+        "JPZ93. Et c’est très beau.",
+        "Les invités avant même la cérémonie.",
+        "Les loutres. Toujours les loutres 🦦"
+      ];
+      document.getElementById("resultat").textContent =
+        messages[Math.floor(Math.random() * messages.length)];
+    }
+
+    /* 🦦 LOUTRES TOUTES LES 15 SECONDES */
+    const otterURL =
+      "https://i.pinimg.com/564x/2e/5f/d5/2e5fd5f926c207b030e310b0264a3923.jpg";
+
+    function spawnOtter() {
+      const otter = document.createElement("img");
+      otter.src = otterURL;
+      otter.className = "otter";
+
+      otter.style.top =
+        Math.random() * (window.innerHeight - 150) + "px";
+      otter.style.left =
+        Math.random() * (window.innerWidth - 150) + "px";
+
+      document.body.appendChild(otter);
+
+      setTimeout(() => otter.remove(), 6000);
+    }
+
+    setInterval(spawnOtter, 15000);
+  </script>
+
+</body>
+</html>
+
+    .section {
+      max-width: 720px;
+      margin: 50px auto;
       padding: 45p
