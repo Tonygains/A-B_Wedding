@@ -4,22 +4,22 @@
   <meta charset="UTF-8">
   <title>Anaïs & Baptiste – Notre Mariage</title>
 
-  <!-- Police élégante -->
+  <!-- Polices élégantes -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background: #faf7f2;
-      color: #3f3a36;
+      background: #f6f8f5;
+      color: #3d403c;
       text-align: center;
       overflow-x: hidden;
     }
 
     h1, h2 {
       font-family: 'Playfair Display', serif;
-      color: #8c5a3c;
+      color: #6f8f7a;
     }
 
     h1 {
@@ -30,147 +30,10 @@
     p {
       font-size: 1.1em;
       line-height: 1.6;
+      color: #4a4f4a;
     }
 
     .section {
-      max-width: 700px;
+      max-width: 720px;
       margin: 50px auto;
-      padding: 40px;
-      background: #ffffff;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-
-    button {
-      background: #8c5a3c;
-      color: white;
-      border: none;
-      padding: 12px 30px;
-      border-radius: 30px;
-      font-size: 1em;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin-top: 15px;
-    }
-
-    button:hover {
-      background: #6f4630;
-      transform: scale(1.05);
-    }
-
-    img.loutres-principale {
-      width: 320px;
-      border-radius: 20px;
-      margin-top: 20px;
-    }
-
-    #resultat {
-      margin-top: 20px;
-      font-size: 1.3em;
-      color: #6f4630;
-      font-weight: 500;
-    }
-
-    /* 🦦 LOUTRES SURPRISE */
-    .otter {
-      position: fixed;
-      width: 120px;
-      z-index: 999;
-      animation: fadeInOut 6s ease-in-out forwards;
-    }
-
-    @keyframes fadeInOut {
-      0% { opacity: 0; transform: scale(0.8); }
-      15% { opacity: 1; transform: scale(1); }
-      85% { opacity: 1; }
-      100% { opacity: 0; transform: scale(0.8); }
-    }
-  </style>
-</head>
-
-<body>
-
-  <h1>Anaïs & Baptiste</h1>
-  <p>Se disent oui, et ils aimeraient beaucoup que vous soyez là 💍</p>
-
-  <div class="section">
-    <h2>📅 Quand</h2>
-    <p>Samedi 22 juin 2026<br>
-    (prévoir des mouchoirs)</p>
-  </div>
-
-  <div class="section">
-    <h2>📍 Où</h2>
-    <p>
-      Château de la Joie<br>
-      Un endroit charmant, un peu comme nous 😌
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>🦦 Symbole officiel du mariage</h2>
-    <p>
-      Les loutres.  
-      Parce qu’elles se tiennent la patte pour ne jamais se perdre.<br>
-      Exactement comme nous (mais avec moins de poils).
-    </p>
-    <img class="loutres-principale"
-         src="https://i.pinimg.com/564x/2e/5f/d5/2e5fd5f926c207b030e310b0264a3923.jpg"
-         alt="Loutres amoureuses">
-  </div>
-
-  <div class="section">
-    <h2>🎮 Mini-jeu très sérieux</h2>
-    <p>Qui va pleurer en premier ?</p>
-    <button onclick="jouer()">Découvrir la vérité</button>
-    <div id="resultat"></div>
-  </div>
-
-  <div class="section">
-    <h2>🎈 RSVP</h2>
-    <p>
-      Merci de confirmer votre présence.<br>
-      Sinon, les loutres seront très déçues.
-    </p>
-    <button onclick="alert('Merci ❤️ On a tellement hâte de vous voir !')">
-      Je confirme
-    </button>
-  </div>
-
-  <script>
-    /* 🎮 Jeu */
-    function jouer() {
-      const messages = [
-        "Anaïs. Sans débat possible 😭",
-        "Baptiste. Il essaiera de faire genre.",
-        "Les deux. Et vous aussi.",
-        "Les parents. Immédiatement.",
-        "Les loutres. Toujours les loutres 🦦"
-      ];
-      document.getElementById("resultat").textContent =
-        messages[Math.floor(Math.random() * messages.length)];
-    }
-
-    /* 🦦 LOUTRES TOUTES LES 15 SECONDES */
-    const otterURL = "https://i.pinimg.com/564x/2e/5f/d5/2e5fd5f926c207b030e310b0264a3923.jpg";
-
-    function spawnOtter() {
-      const otter = document.createElement("img");
-      otter.src = otterURL;
-      otter.className = "otter";
-
-      otter.style.top = Math.random() * (window.innerHeight - 150) + "px";
-      otter.style.left = Math.random() * (window.innerWidth - 150) + "px";
-
-      document.body.appendChild(otter);
-
-      setTimeout(() => {
-        otter.remove();
-      }, 6000);
-    }
-
-    setInterval(spawnOtter, 15000);
-  </script>
-
-</body>
-</html>
+      padding: 45p
