@@ -2,10 +2,92 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Notre mariage</title>
+  <title>Anaïs & Baptiste - Notre Mariage</title>
+  <style>
+    /* 🌸 Couleurs douces pour le mariage */
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background: #fff5f8;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #ff6f91;
+      margin-top: 50px;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin: 20px;
+    }
+
+    .section {
+      margin: 40px 20px;
+      padding: 20px;
+      border-radius: 15px;
+      background: #ffeef5;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    button {
+      background-color: #ff6f91;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff3f6c;
+    }
+
+    img.fun {
+      width: 80px;
+      margin: 10px;
+      animation: bounce 1.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+  </style>
 </head>
 <body>
-  <h1>Bienvenue à notre mariage !</h1>
-  <p>Nous sommes heureux de vous accueillir sur notre site.</p>
+
+  <h1>💖 Anaïs & Baptiste 💖</h1>
+  <p>Bienvenue sur notre page de mariage !</p>
+
+  <div class="section">
+    <h2>📅 Quand ?</h2>
+    <p>Samedi 20 juin 2026</p>
+  </div>
+
+  <div class="section">
+    <h2>📍 Où ?</h2>
+    <p>Château de la Joie, 123 Rue des Amours, Paris</p>
+  </div>
+
+  <div class="section">
+    <h2>🎉 Fun !</h2>
+    <p>Voici quelques images pour mettre le sourire 😊</p>
+    <img class="fun" src="https://twemoji.maxcdn.com/v/latest/svg/1f389.svg" alt="ballon">
+    <img class="fun" src="https://twemoji.maxcdn.com/v/latest/svg/1f370.svg" alt="gâteau">
+    <img class="fun" src="https://twemoji.maxcdn.com/v/latest/svg/1f495.svg" alt="coeur">
+  </div>
+
+  <div class="section">
+    <h2>🎈 RSVP</h2>
+    <p>Confirmez votre présence en nous envoyant un message 😊</p>
+    <button onclick="alert('Merci ! On a hâte de vous voir !')">Je confirme</button>
+  </div>
+
 </body>
 </html>
