@@ -316,6 +316,111 @@
             z-index: 999;
         }
 
+        .falling-otter {
+            position: fixed;
+            font-size: 2.5rem;
+            pointer-events: none;
+            z-index: 1000;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .rsvp-section {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .rsvp-btn {
+            padding: 1.2rem 3rem;
+            font-size: 1.3rem;
+            background: linear-gradient(135deg, #81c784 0%, #66bb6a 100%);
+            box-shadow: 0 6px 20px rgba(93, 122, 93, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .rsvp-btn:hover {
+            animation: none;
+        }
+
+        .dress-section {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .dress-btn {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            background: linear-gradient(135deg, #ffb74d 0%, #ffa726 100%);
+        }
+
+        .dress-btn:hover {
+            background: linear-gradient(135deg, #ffa726 0%, #ff9800 100%);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+            border: 3px solid #81c784;
+        }
+
+        .modal-content img {
+            max-width: 100%;
+            border-radius: 15px;
+            margin: 1rem 0;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .close-modal:hover {
+            color: #333;
+        }
+
+        .modal-text {
+            font-size: 1.3rem;
+            color: #4a5f4a;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             .subtitle { font-size: 1.2rem; }
@@ -359,6 +464,21 @@
                 <span class="countdown-number" id="seconds">00</span>
                 <span class="countdown-label">Secondes</span>
             </div>
+        </div>
+
+        <div class="rsvp-section">
+            <button class="rsvp-btn" onclick="confirmAttendance()">🦦 Je Participe ! 🦦</button>
+        </div>
+
+        <div class="dress-section">
+            <button class="dress-btn" onclick="showDress()">👗 Clique pour voir la robe de Ninis</button>
+        </div>
+    </div>
+
+    <div class="modal" id="dressModal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-modal" onclick="closeModal()">×</span>
+            <img src="https://claude.site/artifacts/4c9bb52d-2326-4cb1-9ad0-1e3eed8af4cf" alt="Hippopotame coquin">
         </div>
     </div>
 
@@ -493,6 +613,33 @@
         }
 
         setInterval(createOtter, 2000);
+
+        // Pluie intense de loutres pour RSVP
+        function confirmAttendance() {
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const otter = document.createElement('div');
+                    otter.className = 'falling-otter';
+                    otter.textContent = '🦦';
+                    otter.style.left = Math.random() * 100 + '%';
+                    otter.style.top = '-50px';
+                    const duration = 3 + Math.random() * 2;
+                    otter.style.animationDuration = duration + 's';
+                    document.body.appendChild(otter);
+                    
+                    setTimeout(() => otter.remove(), duration * 1000);
+                }, i * 100);
+            }
+        }
+
+        // Modal de la robe
+        function showDress() {
+            document.getElementById('dressModal').classList.add('show');
+        }
+
+        function closeModal() {
+            document.getElementById('dressModal').classList.remove('show');
+        }
 
         // Quiz
         function changeQuestion(direction) {
